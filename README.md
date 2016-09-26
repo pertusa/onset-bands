@@ -1,6 +1,6 @@
 # Music note onset detection using one-semitone filterbanks
 
-This is the method described in the following works:
+This is the onset detection method described in these publications:
 
 ```
 "Note onset detection using one semitone filter-bank for MIREX 2009",
@@ -14,6 +14,10 @@ http://www.music-ir.org/mirex/2009/index.php/Audio_Onset_Detection_Results
 A. Pertusa, A. Klapuri and J. M. Iñesta, 
 Lecture notes in Computer Science, vol. 3773, pp 869-879, 2005.
 ```
+
+The input file must be WAV, MONO, and with fs= 22050 Hz or 44100 Hz. The
+default output is a list of onset times in seconds printed in the standard
+output.
 
 ## Compilation
 
@@ -49,9 +53,6 @@ where context is the number of aditional frames, theta is the onset
 detection threshold, and mu is the silence threshold. The default values are
 context=0, theta=0.18 and mu=70.
 
-The input file must be WAV, MONO, and with fs= 22050 Hz or 44100 Hz. The
-default output is a list of onset times in seconds printed in the standard
-output.
 
 The -csound option generates two files (onset.orc and onset.sco). They
 contain the instructions to generate (using CSound) synthesized wavefiles
@@ -59,5 +60,5 @@ with added "ticks" in the times when onsets were detected. CSound comes as a
 standard package in Linux and MacOS. It can also be downloaded from
 www.csounds.com
 
-The -o <filename> option prints the onset detection function into the
+The -o \<filename\> option prints the onset detection function into the
 specified file.
